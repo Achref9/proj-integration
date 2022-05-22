@@ -1,15 +1,15 @@
 <?php
 $idcon=mysqli_connect('localhost','root',"",'biblio');
-include ("modifierEtud.php");
+include ("modifierProf.php");
 
 $code=$_POST['code'];
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'] ;
 $adresse=$_POST['adresse'];
-$classe=$_POST['classe'];
-$email=$_POST['email'];
-$requet ="update etudiant set nom='$nom',Prenom='$prenom',
-adresse='$adresse', classe='$classe',email='$email' where CodeEtudiant='$code'";
+
+
+$requet ="update professeur set nom='$nom',Prenom='$prenom',
+adresse='$adresse' where codeProf='$code'";
 
 $ok=mysqli_query($idcon,$requet);
 if ($ok==FALSE)

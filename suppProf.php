@@ -4,14 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Supp etudiant</title>
+    <title>Supprimer professeur</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        ul li
+{
+    list-style-type: none;
+}
+
+        </style>
 </head>
 <body>
+<ul class="pager">
+  <li class="previous"><p>
+        <a class="btn btn-info btn-lg" href="indexProf.html"><i class="fa fa-cloud-download"></i> <span>Previous Page</span></a>
+      </p></li>
+ 
+</ul>
     <div class="registration-form">
-    <form method="POST", action="suppEtud_action.php">
+    <form method="POST", action="suppProf_action.php">
             <div class="form-icon">
                 <span><i class="icon icon-trash"></i></span>
             </div>
@@ -20,7 +33,7 @@
             </div>
            
             <div class="form-group">
-                <input type="submit" class="btn btn-block create-account" value="Delete student">
+                <input type="submit" class="btn btn-block create-account" value="Delete Professor">
             </div>
         </form>
         <ul class="pager">
@@ -31,4 +44,3 @@
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-

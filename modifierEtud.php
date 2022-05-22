@@ -30,6 +30,13 @@
             <div class="form-group">
                 <input type="text" class="form-control item" name="classe" placeholder="Class">
             </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control item" name="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" name="phone" maxlenght="8" placeholder="phone">
+            </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-block create-account" value="Edit student">
             </div>

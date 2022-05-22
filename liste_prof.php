@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Liste etudiant</title>
+    <title>Liste Prof</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <meta charset="">
@@ -16,21 +16,18 @@
             
         <div class="input-group mb-3">
             
-  <input type="text" value="<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control" placeholder="Code d'etudiant, nom, prenom" name="search" >
+  <input type="text" value="<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control" placeholder="Code Professeur, nom, prenom" name="search" >
   <div class="input-group-append">
     <button class="btn btn-outline-secondary" type="submit" name="submitSearch">Rechercher</button>
   </div>
 </div>
-<Table class="table table-bordered table-striped">
+<Table class="table table-hover">
 <thead class="thead-dark">
 <tr>
 <th> Code</th>
 <th> Nom </th>
 <th> Prénom</th>
 <th> Adresse</th>
-<th> Classe</th>
-<th colspan="2">Email</th>
-<th> Phone</th>
 
 </tr>
 </thead>
@@ -41,7 +38,7 @@
     if(isset($_GET['search']))
          {
              $filtervalues = $_GET['search'];
-              $requete = "SELECT * FROM etudiant WHERE CONCAT(Nom,prenom,CodeEtudiant) LIKE '%$filtervalues%' ";
+              $requete = "SELECT * FROM professeur WHERE CONCAT(Nom,prenom,codeProf) LIKE '%$filtervalues%' ";
                          $ok = mysqli_query($idcon, $requete);
 
                    if(!$ok || mysqli_num_rows($ok) > 0)
@@ -53,14 +50,10 @@
                        
 
                           <tr>
-                            <td><?= $ligne['CodeEtudiant']; ?></td>
-                            <td><?= $ligne['Nom']; ?></td>
+                            <td><?= $ligne['codeProf']; ?></td>
+                            <td><?= $ligne['nom']; ?></td>
                             <td><?= $ligne['prenom']; ?></td>
                              <td><?= $ligne['adresse']; ?></td>
-                             <td><?= $ligne['classe']; ?></td>
-                             <td ><?= $ligne['email']; ?></td>
-                             <td ><?= $ligne['Phone']; ?></td>
-
                           </tr>
                           </table>
        <?php
@@ -70,7 +63,7 @@
                    {
                 ?>
                    <tr>
-                  <td colspan="4">Etudiant(e) inexistant(e)</td>
+                  <td colspan="4">Professeur(e) inexistant(e)</td>
                     </tr>
                <?php
                  }
